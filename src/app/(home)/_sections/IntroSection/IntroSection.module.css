@@ -1,0 +1,13 @@
+.IntroSection {
+  padding: 100px;
+}
+
+.quoteContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.quote {
+  font-size: 40px;
+  font-weight: 700;
+}

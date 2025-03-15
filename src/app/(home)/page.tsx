@@ -1,4 +1,4 @@
-import { HeroSection } from '@/app/(home)/_sections';
+import { HeroSection, IntroSection } from '@/app/(home)/_sections';
 import s from './HomePage.module.css';
 
 export default function HomePage() {
@@ -6,6 +6,9 @@ export default function HomePage() {
     <main className={s.HomePage}>
       {/* 2. 히어로 섹션 */}
       <HeroSection />
+
+      {/* 3. 소개 섹션 */}
+      <IntroSection />
     </main>
   );
 }

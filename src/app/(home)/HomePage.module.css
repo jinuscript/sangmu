@@ -1,0 +1,44 @@
+.HeroSection {
+  position: relative;
+}
+
+.hero {
+  background-image: url('/home/banner1.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+}
+
+.overlay {
+  background-color: hsl(0, 0%, 0%, 50%);
+  height: 100vh;
+}
+
+.titleContainer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  cursor: default;
+}
+
+.title {
+  text-align: center;
+  color: white;
+}
+
+.strong {
+  font-weight: 700;
+}
+
+.title1 {
+  font-size: 50px;
+  font-weight: 400;
+  margin-bottom: 16px;
+}
+
+.title2 {
+  font-size: 50px;
+  font-weight: 400;
+}

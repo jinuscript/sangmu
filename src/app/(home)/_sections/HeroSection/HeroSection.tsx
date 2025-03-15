@@ -11,7 +11,7 @@ export default function HeroSection() {
           </p>
           <p className={`${s.title} ${s.title2}`}>
             <span className={s.strong}>경험</span>이 빛나는{' '}
-            <span className={s.strong}>법률 사무소 상무</span>
+            <span className={s.strong}>법률사무소 상무</span>
           </p>
         </div>
       </div>

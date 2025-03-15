@@ -1,0 +1,47 @@
+.Navigation {
+  display: flex;
+  align-items: center;
+  height: 60px;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+.layoutContainer {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 0;
+}
+
+.logo {
+  font-weight: 700;
+  font-size: 28px;
+  cursor: pointer;
+  color: white;
+}
+
+.ul {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-size: 18px;
+  color: white;
+}
+
+.li {
+  padding: 8px 16px;
+  cursor: pointer;
+  font-weight: 500;
+  border-radius: 8px;
+  transition: all 200ms ease-in-out;
+}
+
+.li:hover {
+  background-color: hsl(188, 39%, 49%, 50%);
+}

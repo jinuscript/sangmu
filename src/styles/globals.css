@@ -5,3 +5,8 @@
 *::after {
   font-family: Pretendard;
 }
+
+a {
+  color: inherit;
+  text-decoration: none;
+}

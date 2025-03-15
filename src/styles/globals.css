@@ -1,1 +1,7 @@
 @import 'reset.css';
+
+*,
+*::before,
+*::after {
+  font-family: Pretendard;
+}

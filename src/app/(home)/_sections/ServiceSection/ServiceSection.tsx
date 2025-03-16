@@ -1,9 +1,9 @@
-'use client';
+"use client";
 
-import { useServiceTypeAtom } from '@/app/(home)/_atoms';
-import { ServiceCard, ServiceNavigation } from '@/app/(home)/_components';
-import SERVICE from '@/app/(home)/_data/SERVICE.json';
-import s from './ServiceSection.module.css';
+import { useServiceTypeAtom } from "@/app/(home)/_atoms";
+import { ServiceCard, ServiceNavigation } from "@/app/(home)/_components";
+import SERVICE from "@/app/(home)/_data/SERVICE.json";
+import s from "./ServiceSection.module.css";
 
 export default function ServiceSection() {
   const [service] = useServiceTypeAtom();

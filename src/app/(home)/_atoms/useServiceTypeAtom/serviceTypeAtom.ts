@@ -1,3 +1,5 @@
-import { atom } from 'jotai';
+import { atom } from "jotai";
 
-export const serviceTypeAtom = atom('가사');
+type TServiceTypeAtom = "가사" | "민사" | "형사";
+
+export const serviceTypeAtom = atom<TServiceTypeAtom>("가사");

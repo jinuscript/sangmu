@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { Provider as JotaiProvider } from 'jotai';
 import { Footer, Navigation } from '@/components';
 import '@/styles/globals.css';
 
@@ -21,9 +22,11 @@ export default function RootLayout({
         />
       </head>
       <body>
-        <Navigation />
-        {children}
-        <Footer />
+        <JotaiProvider>
+          <Navigation />
+          {children}
+          <Footer />
+        </JotaiProvider>
       </body>
     </html>
   );

@@ -3,7 +3,7 @@ import s from './StrengthCard.module.css';
 
 const strength = {
   경력: {
-    img: '/home/경력.svg',
+    img: '/home/career.svg',
     title: '15년+ 경력',
     desc: '광주에서만 가사, 민사, 형사 분야에서 15년 넘게 쌓아온 풍부한 노하우로, 가장 효과적인 해결책을 제시합니다',
   },

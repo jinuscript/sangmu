@@ -11,6 +11,8 @@ export default function ServiceSection() {
   return (
     <section className={s.ServiceSection}>
       <div className={s.layoutContainer}>
+        <h3 className={s.title}>업무 분야</h3>
+
         <div className={s.ServiceNavigationContainer}>
           <ServiceNavigation />
         </div>

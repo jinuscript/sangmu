@@ -1,0 +1,20 @@
+.ServiceSection {
+  padding: 100px 0;
+  background-color: #fff;
+}
+
+.layoutContainer {
+  max-width: 1000px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.ServiceNavigationContainer {
+  margin-bottom: 80px;
+}
+
+.ServiceCardContainer {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}

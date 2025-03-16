@@ -1,5 +1,6 @@
 .IntroSection {
   padding: 100px;
+  background-color: #f9f9f9;
 }
 
 .quoteContainer {
@@ -44,4 +45,9 @@
   max-width: 1000px;
   width: 100%;
   margin: 0 auto;
+}
+
+.end {
+  margin-top: 40px;
+  text-align: right;
 }

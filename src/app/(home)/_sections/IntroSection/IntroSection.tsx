@@ -6,7 +6,7 @@ export default function IntroSection() {
     <section className={s.IntroSection}>
       <div className={s.layoutContainer}>
         <div className={s.quoteContainer}>
-          <p className={s.quote}>10년째 광주에서 경력을 쌓아온 상무</p>
+          <p className={s.quote}>끝까지 책임을 다하는 성실한 변호사</p>
         </div>
 
         <div className={s.letterContainer}>
@@ -59,6 +59,8 @@ export default function IntroSection() {
             </p>
 
             <p className={s.p}>감사합니다.</p>
+
+            <p className={`${s.p} ${s.end}`}>변호사 송지현 올림</p>
           </div>
         </div>
       </div>

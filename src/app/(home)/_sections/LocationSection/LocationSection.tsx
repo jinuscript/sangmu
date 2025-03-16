@@ -1,4 +1,4 @@
-// 'use client';
+'use client';
 
 import Image from 'next/image';
 import s from './LocationSection.module.css';
@@ -10,7 +10,12 @@ export default function LocationSection() {
         <p className={s.title}>찾아오시는 길</p>
 
         <div className={s.imgContainer}>
-          <div className={s.overlay}>
+          <div
+            className={s.overlay}
+            onClick={() => {
+              window.open('https://naver.me/Fw7bpa5p', '_blank');
+            }}
+          >
             <p className={s.desc}>네이버 지도로 이동하기</p>
           </div>
           <Image

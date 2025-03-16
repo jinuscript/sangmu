@@ -1,16 +1,15 @@
-import Image from 'next/image';
 import s from './ServiceCard.module.css';
 
-export default function ServiceCard() {
+type TServiceCard = {
+  title: string;
+  desc: string;
+};
+
+export default function ServiceCard({ title, desc }: TServiceCard) {
   return (
     <div className={s.ServiceCard}>
-      <Image
-        className={s.icon}
-        src="/home/민사.svg"
-        alt="민사"
-        width={40}
-        height={40}
-      />
+      <p className={s.title}>{title}</p>
+      <p className={s.desc}>{desc}</p>
     </div>
   );
 }

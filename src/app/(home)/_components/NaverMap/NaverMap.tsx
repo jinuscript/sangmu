@@ -1,6 +1,6 @@
-import { useRef } from 'react';
-import Script from 'next/script';
-import s from './NaverMap.module.css';
+import { useRef } from "react";
+import Script from "next/script";
+import s from "./NaverMap.module.css";
 
 export default function NaverMap() {
   const mapRef = useRef(null);
@@ -19,7 +19,7 @@ export default function NaverMap() {
   return (
     <>
       <Script
-        src={`https://oapi.map.naver.com/openapi/v3/maps.js?ncpClientId=${NEXT_PUBLIC_NAVER_CLIENT_ID}`}
+        src={`https://oapi.map.naver.com/openapi/v3/maps.js?ncpClientId=${process.env.NEXT_PUBLIC_NAVER_CLIENT_ID}`}
         onLoad={handleScriptLoad}
       />
 

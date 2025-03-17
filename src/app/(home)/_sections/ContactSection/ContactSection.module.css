@@ -1,0 +1,22 @@
+.ContactSection {
+  padding: 100px 0;
+}
+
+.InputContainer {
+  display: flex;
+  gap: 40px;
+  margin-bottom: 40px;
+}
+
+.Input {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 1;
+}
+
+.Textarea {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}

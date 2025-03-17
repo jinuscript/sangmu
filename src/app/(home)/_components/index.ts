@@ -1,3 +1,4 @@
-export { default as ServiceCard } from './ServiceCard/ServiceCard';
-export { default as ServiceNavigation } from './ServiceNavigation/ServiceNavigation';
-export { default as StrengthCard } from './StrengthCard/StrengthCard';
+export { default as LayoutContainer } from "./LayoutContainer/LayoutContainer";
+export { default as ServiceCard } from "./ServiceCard/ServiceCard";
+export { default as ServiceNavigation } from "./ServiceNavigation/ServiceNavigation";
+export { default as StrengthCard } from "./StrengthCard/StrengthCard";

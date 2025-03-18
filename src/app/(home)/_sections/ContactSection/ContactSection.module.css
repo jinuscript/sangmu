@@ -27,6 +27,13 @@
   border-radius: 10px;
   padding: 8px 16px;
   font-size: 18px;
+  outline: none;
+  border: 1px solid #dddddd;
+  transition: all 200ms ease-in-out;
+}
+
+.Input input:focus {
+  border: 1px solid #384dd6;
 }
 
 .Input label {
@@ -51,6 +58,13 @@
   padding: 16px;
   border-radius: 10px;
   font-size: 18px;
+  border: 1px solid #dddddd;
+  transition: all 200ms ease-in-out;
+}
+
+.Textarea textarea:focus {
+  outline: none;
+  border: 1px solid #384dd6;
 }
 
 .Checkbox {

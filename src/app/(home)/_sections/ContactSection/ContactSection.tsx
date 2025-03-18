@@ -27,6 +27,10 @@ export default function ContactSection() {
           </label>
           <textarea className={s.textarea} />
         </div>
+          <div className={s.Checkbox}>
+            <input type="checkbox" />
+            <label htmlFor="">개인정보 수집 및 이용동의</label>
+          </div>
       </LayoutContainer>
     </section>
   );

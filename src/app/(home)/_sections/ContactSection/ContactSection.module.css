@@ -2,6 +2,13 @@
   padding: 100px 0;
 }
 
+.title {
+  font-weight: 700;
+  font-size: 40px;
+  text-align: center;
+  margin-bottom: 100px;
+}
+
 .InputContainer {
   display: flex;
   gap: 40px;
@@ -11,12 +18,74 @@
 .Input {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 16px;
   flex: 1;
+}
+
+.Input input {
+  height: 40px;
+  border-radius: 10px;
+  padding: 8px 16px;
+  font-size: 18px;
+}
+
+.Input label {
+  font-weight: 700;
+  font-size: 20px;
 }
 
 .Textarea {
   display: flex;
   flex-direction: column;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.Textarea label {
+  font-weight: 700;
+  font-size: 20px;
+}
+
+.Textarea textarea {
+  height: 300px;
+  padding: 16px;
+  border-radius: 10px;
+  font-size: 18px;
+}
+
+.Checkbox {
+  display: flex;
+  align-items: center;
   gap: 8px;
+  margin-bottom: 40px;
+}
+
+.Checkbox input {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+}
+
+.Checkbox label {
+  font-size: 16px;
+}
+
+.buttonContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.button {
+  padding: 16px 24px;
+  font-size: 18px;
+  font-weight: 500;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 200ms ease-in-out;
+}
+
+.button:hover {
+  background-color: rgb(100, 100, 228);
+  color: white;
 }

@@ -31,6 +31,9 @@ export default function ContactSection() {
             <input type="checkbox" />
             <label htmlFor="">개인정보 수집 및 이용동의</label>
           </div>
+          <div className={s.buttonContainer}>
+            <button className={s.button}>상담 신청</button>
+          </div>
       </LayoutContainer>
     </section>
   );

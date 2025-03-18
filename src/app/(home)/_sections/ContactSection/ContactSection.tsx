@@ -5,6 +5,7 @@ export default function ContactSection() {
   return (
     <section className={s.ContactSection}>
       <LayoutContainer>
+        <h2 className={s.title}>상담 문의</h2>
         <div className={s.InputContainer}>
           <div className={s.Input}>
             <label className={s.label} htmlFor="">

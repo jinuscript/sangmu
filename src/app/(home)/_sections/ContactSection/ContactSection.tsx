@@ -1,7 +1,8 @@
 "use client";
 
-import { useState, ChangeEvent, FormEvent } from "react";
+import { useState, ChangeEvent } from "react";
 import { LayoutContainer } from "@/app/(home)/_components";
+import { sendEmail } from "@/lib/actions";
 import s from "./ContactSection.module.css";
 
 export default function ContactSection() {
@@ -24,24 +25,11 @@ export default function ContactSection() {
     }));
   };
 
-  const handleForm = (e: FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-
-    setFormData({
-      name: "",
-      phone: "",
-      content: "",
-      agreement: false,
-    });
-
-    alert("상담 신청 완료!");
-  };
-
   return (
     <section className={s.ContactSection}>
       <LayoutContainer>
         <h2 className={s.title}>상담 문의</h2>
-        <form onSubmit={handleForm}>
+        <form action={sendEmail}>
           <div className={s.InputContainer}>
             <div className={s.Input}>
               <label className={s.label} htmlFor="">

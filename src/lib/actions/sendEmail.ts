@@ -8,7 +8,8 @@ export default async function sendEmail(formData: FormData) {
   const content = formData.get("content");
 
   if (!name || !phone || !content) {
-    return { error: "모든 필드를 입력하세요." };
+    console.log("🚨 오류: 모든 필드를 입력하세요.");
+    return;
   }
 
   try {
@@ -34,9 +35,10 @@ export default async function sendEmail(formData: FormData) {
              <p>${content}</p>`,
     });
 
-    return { success: "이메일이 성공적으로 전송되었습니다!" };
+    console.log("✅ 이메일이 성공적으로 전송되었습니다!");
+    return;
   } catch (error) {
     console.error("이메일 전송 오류:", error);
-    return { error: "이메일 전송 실패" };
+    return;
   }
 }

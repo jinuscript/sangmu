@@ -3,7 +3,7 @@
 }
 
 .hero {
-  background-image: url('/home/banner1.jpg');
+  background-image: url("/home/hero.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -21,9 +21,13 @@
   left: 50%;
   transform: translate(-50%, -50%);
   cursor: default;
+  width: 100%;
+  padding: 0 16px;
 }
 
 .title {
+  font-size: 50px;
+  font-weight: 400;
   text-align: center;
   color: white;
 }
@@ -33,12 +37,16 @@
 }
 
 .title1 {
-  font-size: 50px;
-  font-weight: 400;
-  margin-bottom: 16px;
+  margin-bottom: 24px;
 }
 
-.title2 {
-  font-size: 50px;
-  font-weight: 400;
+@media screen and (max-width: 480px) {
+  .title {
+    font-size: 7.5vw;
+    margin-bottom: 16px;
+  }
+
+  .title2 {
+    line-height: 150%;
+  }
 }

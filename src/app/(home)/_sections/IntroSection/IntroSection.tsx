@@ -1,5 +1,5 @@
-import Image from 'next/image';
-import s from './IntroSection.module.css';
+import Image from "next/image";
+import s from "./IntroSection.module.css";
 
 export default function IntroSection() {
   return (
@@ -11,7 +11,7 @@ export default function IntroSection() {
 
         <div className={s.letterContainer}>
           <Image
-            className={s.profile}
+            className={s.profileImg}
             src="/home/profile.jpg"
             alt=""
             width={640}
@@ -19,7 +19,7 @@ export default function IntroSection() {
           />
           <div className={s.letter}>
             <p className={s.p}>
-              안녕하세요?{' '}
+              안녕하세요?{" "}
               <span className={s.strong}>
                 법무법인 상무 대표, 변호사 송지현
               </span>
@@ -29,7 +29,7 @@ export default function IntroSection() {
             <p className={s.p}>
               저는 직접 상담과 의뢰인과의 긴밀한 소통을 가장 중요하게
               생각합니다. 이혼은 인생에서 겪기 어려운 큰 풍파인 만큼, 의뢰인의
-              상황과 감정에 진심으로 공감하며{' '}
+              상황과 감정에 진심으로 공감하며{" "}
               <span className={s.strong}>
                 서면 작성부터 사건 진행, 판결 및 조정내용 이행에 이르기까지
                 변호사인 제가 전 과정을 책임지고 살핍니다.

@@ -6,6 +6,7 @@
 .layoutContainer {
   max-width: 1000px;
   width: 100%;
+  padding: 0 16px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -30,4 +31,14 @@
 
 .privacy {
   font-size: 14px;
+}
+
+@media screen and (max-width: 480px) {
+  .address {
+    line-height: 150%;
+  }
+
+  .privacy {
+    line-height: 150%;
+  }
 }

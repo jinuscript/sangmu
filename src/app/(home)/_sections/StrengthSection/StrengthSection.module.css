@@ -6,17 +6,7 @@
   max-width: 1200px;
   width: 100%;
   margin: 0 auto;
-}
-
-.title {
-  font-size: 40px;
-  font-weight: 400;
-  /* text-align: center; */
-  margin-bottom: 100px;
-}
-
-.strong {
-  font-weight: 700;
+  padding: 0 16px;
 }
 
 .StrengthCardContainer {
@@ -30,4 +20,19 @@
 
 .StrengthCardContainer > div:nth-child(3n) {
   border-right: none;
+}
+
+@media screen and (max-width: 480px) {
+  .StrengthCardContainer {
+    grid-template-columns: 1fr;
+  }
+
+  .StrengthCardContainer > div {
+    border-bottom: 1px solid #dddddd;
+    border-right: none;
+  }
+
+  .StrengthCardContainer > div:nth-child(3n) {
+    border-bottom: none;
+  }
 }

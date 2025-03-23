@@ -26,7 +26,12 @@ export default function ContactSection() {
               <label className={s.label} htmlFor="">
                 성함
               </label>
-              <input className={s.input} type="text" name="name" />
+              <input
+                className={s.input}
+                type="text"
+                name="name"
+                maxLength={30}
+              />
             </div>
 
             <div className={s.Input}>

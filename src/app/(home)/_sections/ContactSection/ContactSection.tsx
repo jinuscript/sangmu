@@ -1,60 +1,39 @@
 "use client";
 
-import { useState, ChangeEvent } from "react";
+import { FormEvent } from "react";
 import { LayoutContainer } from "@/app/(home)/_components";
 import { sendEmail } from "@/lib/actions";
 import s from "./ContactSection.module.css";
 
 export default function ContactSection() {
-  const [formData, setFormData] = useState({
-    name: "",
-    phone: "",
-    content: "",
-    agreement: false,
-  });
+  const handleFormSubmit = async (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
 
-  const handleChange = (
-    e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
-    const { name, type, value } = e.target;
+    const formData = new FormData(e.currentTarget);
 
-    setFormData((prevFormData) => ({
-      ...prevFormData,
-      [name]:
-        type === "checkbox" ? (e.target as HTMLInputElement).checked : value,
-    }));
+    const result = await sendEmail(formData);
+
+    alert(result.message);
   };
 
   return (
     <section className={s.ContactSection}>
       <LayoutContainer>
         <h2 className={s.title}>상담 문의</h2>
-        <form action={sendEmail}>
+        <form onSubmit={handleFormSubmit}>
           <div className={s.InputContainer}>
             <div className={s.Input}>
               <label className={s.label} htmlFor="">
                 성함
               </label>
-              <input
-                className={s.input}
-                type="text"
-                name="name"
-                value={formData.name}
-                onChange={handleChange}
-              />
+              <input className={s.input} type="text" name="name" />
             </div>
 
             <div className={s.Input}>
               <label className={s.label} htmlFor="">
                 휴대폰
               </label>
-              <input
-                className={s.input}
-                type="text"
-                name="phone"
-                value={formData.phone}
-                onChange={handleChange}
-              />
+              <input className={s.input} type="text" name="phone" />
             </div>
           </div>
 
@@ -62,21 +41,11 @@ export default function ContactSection() {
             <label className={s.label} htmlFor="">
               문의내용
             </label>
-            <textarea
-              className={s.textarea}
-              name="content"
-              value={formData.content}
-              onChange={handleChange}
-            />
+            <textarea className={s.textarea} name="content" />
           </div>
 
           <div className={s.Checkbox}>
-            <input
-              type="checkbox"
-              name="agreement"
-              checked={formData.agreement}
-              onChange={handleChange}
-            />
+            <input type="checkbox" name="agreement" />
             <label htmlFor="">개인정보 수집 및 이용동의</label>
           </div>
 

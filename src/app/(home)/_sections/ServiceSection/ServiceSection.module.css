@@ -27,7 +27,7 @@
   gap: 16px;
 }
 
-@media screen {
+@media screen and (max-width: 480px) {
   .ServiceNavigationContainer {
     margin-bottom: 40px;
   }

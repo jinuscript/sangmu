@@ -6,10 +6,14 @@ export default async function sendEmail(formData: FormData) {
   const name = formData.get("name");
   const phone = formData.get("phone");
   const content = formData.get("content");
+  const agreement = formData.get("agreement") === "on";
 
   if (!name || !phone || !content) {
-    console.log("🚨 오류: 모든 필드를 입력하세요.");
-    return;
+    return { success: false, message: "비어있는 값이 있습니다" };
+  }
+
+  if (!agreement) {
+    return { success: false, message: "개인정보 동의가 필요합니다" };
   }
 
   try {
@@ -35,10 +39,12 @@ export default async function sendEmail(formData: FormData) {
              <p>${content}</p>`,
     });
 
-    console.log("✅ 이메일이 성공적으로 전송되었습니다!");
-    return;
+    return { success: true, message: "상담신청이 완료됐습니다" };
   } catch (error) {
     console.error("이메일 전송 오류:", error);
-    return;
+    return {
+      success: false,
+      message: "이메일 전송에 실패했습니다. 나중에 다시 시도해주세요.",
+    };
   }
 }

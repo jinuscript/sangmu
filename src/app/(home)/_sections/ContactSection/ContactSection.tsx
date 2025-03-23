@@ -33,7 +33,17 @@ export default function ContactSection() {
               <label className={s.label} htmlFor="">
                 휴대폰
               </label>
-              <input className={s.input} type="text" name="phone" />
+              <input
+                className={s.input}
+                type="text"
+                name="phone"
+                inputMode="numeric"
+                maxLength={11}
+                onInput={(e) => {
+                  const target = e.currentTarget;
+                  target.value = target.value.replace(/\D/g, "");
+                }}
+              />
             </div>
           </div>
 

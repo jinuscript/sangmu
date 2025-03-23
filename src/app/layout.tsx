@@ -1,11 +1,11 @@
-import type { Metadata } from "next";
-import { Provider as JotaiProvider } from "jotai";
-import { Footer, Navigation } from "@/components";
-import "@/styles/globals.css";
+import type { Metadata } from 'next';
+import { Provider as JotaiProvider } from 'jotai';
+import { Footer, Navigation, SideMenu } from '@/components';
+import '@/styles/globals.css';
 
 export const metadata: Metadata = {
-  title: "법률사무소 상무",
-  description: "법률사무소 상무",
+  title: '법률사무소 상무',
+  description: '법률사무소 상무',
 };
 
 export default function RootLayout({
@@ -26,6 +26,7 @@ export default function RootLayout({
           <Navigation />
           {children}
           <Footer />
+          <SideMenu />
         </JotaiProvider>
       </body>
     </html>

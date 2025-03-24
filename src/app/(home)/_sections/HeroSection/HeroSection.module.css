@@ -11,7 +11,7 @@
 }
 
 .overlay {
-  background-color: hsl(0, 0%, 0%, 50%);
+  background-color: hsl(0, 0%, 0%, 60%);
   height: 100vh;
 }
 
@@ -30,14 +30,27 @@
   font-weight: 400;
   text-align: center;
   color: white;
+  font-weight: 700;
 }
 
 .strong {
   font-weight: 700;
+  color: #ffb400;
 }
 
 .title1 {
   margin-bottom: 24px;
+}
+
+.title2 {
+  margin-bottom: 40px;
+}
+
+.p {
+  color: white;
+  text-align: center;
+  font-size: 24px;
+  font-weight: 500;
 }
 
 @media screen and (max-width: 480px) {
@@ -47,6 +60,12 @@
   }
 
   .title2 {
+    margin-bottom: 24px;
+  }
+
+  .p {
     line-height: 150%;
+    text-align: center;
+    font-size: 3.5vw;
   }
 }

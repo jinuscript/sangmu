@@ -8,11 +8,14 @@ export default function HeroSection() {
 
         <div className={s.titleContainer}>
           <p className={`${s.title} ${s.title1}`}>
-            당신의 <span className={s.strong}>마음</span>을 이해하는
+            마음을 이해하는 <span className={s.strong}>변호</span>
           </p>
           <p className={`${s.title} ${s.title2}`}>
-            <span className={s.strong}>경험</span>이 빛나는{" "}
-            <span className={s.strong}>법률사무소 상무</span>
+            끝까지 함께하는 <span className={s.strong}>법률 파트너</span>
+          </p>
+          <p className={s.p}>
+            상담부터 판결까지, <span className={s.strong}>법률사무소 상무</span>
+            는 진심을 담아 함께합니다
           </p>
         </div>
       </div>

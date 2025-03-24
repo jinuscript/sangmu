@@ -1,5 +1,5 @@
-import Link from 'next/link';
-import s from './Footer.module.css';
+import Link from "next/link";
+import s from "./Footer.module.css";
 
 export default function Footer() {
   return (
@@ -11,8 +11,8 @@ export default function Footer() {
         <address className={s.address}>
           <p className={s.p}>대표: 송지현</p>
           <p className={s.p}>
-            주소: 광주 동구 동명로 101-1 (지산동), 변호사 송지현 법률사무소 3층
-            302호
+            주소: 광주 동구 동명로 101-1 광주지방변호사회관 302호 법률사무소
+            상무
           </p>
           <p className={s.p}>사업자등록번호: 408-18-55951</p>
           <p className={s.p}>TEL/FAX: 062-222-8825</p>

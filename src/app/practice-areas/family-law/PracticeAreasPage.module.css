@@ -1,0 +1,27 @@
+.banner {
+  background-image: url("/practice-areas/practice-areas.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 400px;
+  position: relative;
+}
+
+.bannerTitle {
+  position: absolute;
+  color: white;
+}
+
+.overlay {
+  background-color: hsl(0, 0%, 0%, 70%);
+  height: 100%;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.title {
+  font-size: 40px;
+  font-weight: 700;
+}

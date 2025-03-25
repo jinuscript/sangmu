@@ -1,4 +1,7 @@
-import s from './ServiceCard.module.css';
+"use client";
+
+import { useGoToPracticeAreas } from "@/app/(home)/_hooks";
+import s from "./ServiceCard.module.css";
 
 type TServiceCard = {
   title: string;
@@ -6,8 +9,10 @@ type TServiceCard = {
 };
 
 export default function ServiceCard({ title, desc }: TServiceCard) {
+  const goToPracticeAreas = useGoToPracticeAreas();
+
   return (
-    <div className={s.ServiceCard}>
+    <div className={s.ServiceCard} onClick={goToPracticeAreas}>
       <p className={s.title}>{title}</p>
       <p className={s.desc}>{desc}</p>
     </div>

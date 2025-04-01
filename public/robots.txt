@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://www.송지현변호사.kr
+
+# Sitemaps
+Sitemap: https://www.송지현변호사.kr/sitemap.xml

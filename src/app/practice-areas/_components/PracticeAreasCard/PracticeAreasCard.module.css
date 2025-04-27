@@ -25,6 +25,7 @@
 .content {
   font-size: 18px;
   line-height: 150%;
+  text-align: justify;
 }
 
 @media screen and (max-width: 480px) {

@@ -9,7 +9,7 @@ export default function ServiceSection() {
   const [service] = useServiceTypeAtom();
 
   return (
-    <section className={s.ServiceSection}>
+    <section className={s.ServiceSection} id="2">
       <div className={s.layoutContainer}>
         <h3 className={s.title}>업무 분야</h3>
 

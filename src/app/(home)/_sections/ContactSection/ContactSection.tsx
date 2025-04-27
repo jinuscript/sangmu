@@ -17,7 +17,7 @@ export default function ContactSection() {
   };
 
   return (
-    <section className={s.ContactSection}>
+    <section className={s.ContactSection} id="3">
       <LayoutContainer>
         <h2 className={s.title}>상담 문의</h2>
         <form onSubmit={handleFormSubmit}>

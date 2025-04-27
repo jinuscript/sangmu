@@ -3,7 +3,7 @@ import s from "./IntroSection.module.css";
 
 export default function IntroSection() {
   return (
-    <section className={s.IntroSection}>
+    <section className={s.IntroSection} id="1">
       <div className={s.layoutContainer}>
         <div className={s.quoteContainer}>
           <p className={s.quote}>끝까지 책임을 다하는 성실한 변호사</p>

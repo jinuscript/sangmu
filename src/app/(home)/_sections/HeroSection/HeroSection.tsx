@@ -18,8 +18,9 @@ export default function HeroSection() {
           </p>
           <p className={s.p}>
             상담부터 판결까지, <span className={s.strong}>법률사무소 상무</span>
-            는 진심을 담아 함께합니다
+            는
           </p>
+          <p className={s.p}>송지현변호사가 직접 진행합니다</p>
         </div>
       </div>
     </section>

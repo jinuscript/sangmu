@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { supabase } from "@/lib/actions";
+import { useRouter } from "next/navigation";
 import s from "./AdminPage.module.css";
 
 const AdminPage = () => {
@@ -9,6 +10,7 @@ const AdminPage = () => {
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
+  const router = useRouter();
 
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -25,6 +27,7 @@ const AdminPage = () => {
     } else {
       console.log(data);
       setSuccess("로그인 성공!");
+      router.replace("/admin/dashboard");
       // 로그인 성공 후 라우팅 또는 관리자 권한 확인 로직 추가
     }
   };

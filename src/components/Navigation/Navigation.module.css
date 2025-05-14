@@ -35,11 +35,15 @@
 }
 
 .li {
-  padding: 8px 16px;
   cursor: pointer;
   font-weight: 500;
   border-radius: 8px;
   transition: all 200ms ease-in-out;
+}
+
+.link {
+  display: inline-block;
+  padding: 8px 16px;
 }
 
 .li:hover {

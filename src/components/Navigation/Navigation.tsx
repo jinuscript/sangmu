@@ -17,13 +17,19 @@ export default function Navigation() {
           </h1>
           <ul className={s.ul}>
             <li className={s.li}>
-              <Link href="/practice-areas/family-law">가사</Link>
+              <Link className={s.link} href="/practice-areas/family-law">
+                가사
+              </Link>
             </li>
             <li className={s.li}>
-              <Link href="/practice-areas/civil-law">민사</Link>
+              <Link className={s.link} href="/practice-areas/civil-law">
+                민사
+              </Link>
             </li>
             <li className={s.li}>
-              <Link href="/practice-areas/criminal-law">형사</Link>
+              <Link className={s.link} href="/practice-areas/criminal-law">
+                형사
+              </Link>
             </li>
           </ul>
         </div>
@@ -39,16 +45,24 @@ export default function Navigation() {
         </h1>
         <ul className={s.ul}>
           <li className={s.li}>
-            <Link href="#1">대표 변호사 소개</Link>
+            <Link className={s.link} href="#1">
+              대표 변호사 소개
+            </Link>
           </li>
           <li className={s.li}>
-            <Link href="#2">주요 업무</Link>
+            <Link className={s.link} href="#2">
+              주요 업무
+            </Link>
           </li>
           <li className={s.li}>
-            <Link href="#3">상담 신청</Link>
+            <Link className={s.link} href="#3">
+              상담 신청
+            </Link>
           </li>
           <li className={s.li}>
-            <Link href="#4">오시는 길</Link>
+            <Link className={s.link} href="#4">
+              오시는 길
+            </Link>
           </li>
         </ul>
       </div>

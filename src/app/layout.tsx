@@ -44,7 +44,7 @@ export default function RootLayout({
       <body>
         <TQProvider>
           <JotaiProvider>
-            <Navigation />
+            {/* <Navigation /> */}
             {children}
             <Footer />
             <SideMenu />

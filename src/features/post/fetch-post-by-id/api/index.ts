@@ -1,0 +1,1 @@
+export { fetchPostByIdQuery } from "./fetchPostByIdQuery";

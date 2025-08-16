@@ -1,1 +1,1 @@
-export { useFetchPostQuery } from "./useFetchPostQuery";
+export { useFetchPostsQuery } from "./useFetchPostsQuery";

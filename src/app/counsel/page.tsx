@@ -1,14 +1,18 @@
 "use client";
 
+import { useState } from "react";
 import Link from "next/link";
 import { useFetchPostsQuery } from "@/features/post/fetch-posts/hook";
 
 export default function CounselPage() {
-  const { data: posts, isLoading, error } = useFetchPostsQuery();
+  const [page, setPage] = useState(1);
+  const { data, isLoading, error } = useFetchPostsQuery({ page });
 
   if (isLoading) return <main>Loading...</main>;
 
   if (error) return <main>Error: {error.message}</main>;
+
+  console.log(data);
 
   return (
     <main>

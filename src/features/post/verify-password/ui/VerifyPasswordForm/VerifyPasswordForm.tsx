@@ -23,6 +23,11 @@ export const VerifyPasswordForm = ({ setIsVerified }) => {
   const handleSubmit = (e: FormData<HTMLFormElement>) => {
     e.preventDefault();
 
+    if (!password) {
+      alert("비밀번호를 입력해주세요.");
+      return;
+    }
+
     verifyPassword({ id, password });
   };
 

@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useFetchPostsQuery } from "@/features/post/fetch-posts/hook";
 
 export default function CounselPage() {
@@ -8,7 +9,11 @@ export default function CounselPage() {
   if (isLoading) return <main>Loading...</main>;
 
   if (error) return <main>Error: {error.message}</main>;
-  console.log(posts);
 
-  return <main>CounselPage</main>;
+  return (
+    <main>
+      CounselPage
+      <Link href="/counsel/write">글쓰기</Link>
+    </main>
+  );
 }

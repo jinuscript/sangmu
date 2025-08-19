@@ -1,16 +1,13 @@
-import { createSupabaseClient } from "@/shared/lib/supabase/client";
-
 export const verifyPassword = async (id: string, password: string) => {
-  const supabase = createSupabaseClient();
-  const { data } = await supabase
-    .from("posts")
-    .select("password")
-    .eq("id", id)
-    .single();
+  const result = await fetch("/api/posts/verify", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ id, password }),
+  });
 
-  if (!data || data.password !== password) {
-    throw new Error("비밀번호가 일치하지 않습니다.");
+  if (!result.ok) {
+    throw new Error("비밀번호가 불일치합니다.");
   }
 
-  return true;
+  return await result.json();
 };

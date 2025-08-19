@@ -1,0 +1,1 @@
+export { useCreateNewPostMutation } from "./useCreateNewPostMutation";

@@ -1,0 +1,1 @@
+export { createNewPost } from "./createNewPost";

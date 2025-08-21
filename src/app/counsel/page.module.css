@@ -1,0 +1,55 @@
+.CounselPage {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.bannerImage {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  background-image: url("/counsel/counsel-banner.jpg");
+  background-size: cover;
+  background-position: center;
+  margin-bottom: 40px;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.p {
+  font-size: 24px;
+  color: white;
+  font-weight: bold;
+}
+
+.layoutContainer {
+  max-width: 1000px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+.buttonContainer {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 24px;
+}
+
+.LinkButton {
+  background-color: blue;
+  padding: 8px 12px;
+  border-radius: 4px;
+  color: red;
+}

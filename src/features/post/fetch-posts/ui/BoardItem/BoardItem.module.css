@@ -24,18 +24,18 @@
 }
 
 .badge {
-  padding: 8px 10px;
+  padding: 8px 16px;
   border-radius: 4px;
-  font-size: 14px;
-  background-color: red;
+  font-size: 16px;
+  font-weight: 500;
 }
 
 .active {
-  background-color: #f0f0f0;
-  color: blue;
+  background-color: #e6f4ff;
+  color: #1d4ed8;
 }
 
 .inactive {
-  background-color: #f0f0f0;
-  color: red;
+  background-color: #fee2e2;
+  color: #b91c1c;
 }

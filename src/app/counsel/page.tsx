@@ -10,7 +10,7 @@ export default function CounselPage() {
       {/* 글쓰기 버튼 */}
       <div className={s.buttonContainer}>
         <Link className={s.LinkButton} href="/counsel/write">
-          글쓰기
+          상담 신청
         </Link>
       </div>
       {/* 게시판 */}

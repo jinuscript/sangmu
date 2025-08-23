@@ -1,9 +1,12 @@
 "use client";
 
 import { BoardItem } from "@/features/post/fetch-posts/ui";
+
+import type { Posts } from "@/entities/post/type";
+
 import s from "./BoardTable.module.css";
 
-export const BoardTable = ({ data }) => {
+export const BoardTable = ({ posts }: { posts: Posts }) => {
   return (
     <table className={s.BoardTable}>
       {/* 제목 */}
@@ -29,30 +32,23 @@ export const BoardTable = ({ data }) => {
 
       {/* 본문 */}
       <tbody className={s.tbody}>
-        {data.map((post) => (
-          <BoardItem
-            key={post.id}
-            post_number={post.post_number}
-            id={post.id}
-            name={post.name}
-            is_answered={post.is_answered}
-            title={post.title}
-            created_at={post.created_at}
-          />
-        ))}
+        {posts.map((post) => {
+          const { id, post_number, name, title, is_answered, created_at } =
+            post;
+
+          return (
+            <BoardItem
+              key={id}
+              post_number={post_number}
+              id={id}
+              name={name}
+              is_answered={is_answered}
+              title={title}
+              created_at={created_at}
+            />
+          );
+        })}
       </tbody>
     </table>
   );
 };
-
-{
-  /* {posts.length > 0 ? (
-          posts.map((post) => <BoardListItem key={post.id} post={post} />)
-        ) : (
-          <tr>
-            <td colSpan={5} className="py-16 text-center text-gray-500">
-              게시글이 없습니다.
-            </td>
-          </tr>
-        )} */
-}

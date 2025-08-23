@@ -15,5 +15,16 @@ export const PostByIdPage = () => {
   if (error) return <main>Error: {error.message}</main>;
   console.log(post);
 
-  return <main>CounselPageById</main>;
+  return (
+    <main className={s.PostByIdPage}>
+      <p className={s.title}>{post?.data.title}</p>
+      <div className={s.container}>
+        <p className={s.name}>{post?.data.name}</p>
+        <div className={s.column} />
+        <p className={s.date}>{post?.data.created_at}</p>
+      </div>
+      <p className={s.content}>{post?.data.content}</p>
+      <p className={s.AdminReply}>하이</p>
+    </main>
+  );
 };

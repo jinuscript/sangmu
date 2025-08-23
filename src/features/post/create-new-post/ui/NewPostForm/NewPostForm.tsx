@@ -1,7 +1,11 @@
 "use client";
 
-import { useRouter } from "next/navigation";
 import { useState } from "react";
+import Link from "next/link";
+import { useRouter } from "next/navigation";
+
+import type { ChangeEvent } from "react";
+
 import { useCreateNewPostMutation } from "@/features/post/create-new-post/hook";
 
 import s from "./NewPostForm.module.css";
@@ -11,8 +15,11 @@ export const NewPostForm = () => {
     name: "",
     title: "",
     content: "",
+    phone: "",
     password: "",
   });
+
+  const [privacy, setPrivacy] = useState(false);
 
   const { push } = useRouter();
 
@@ -35,16 +42,10 @@ export const NewPostForm = () => {
     },
   });
 
-  const handleSubmit = (e: React.ChangeEvent<HTMLFormElement>) => {
+  const handleSubmit = (e: ChangeEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    if (
-      !formData.name ||
-      !formData.title ||
-      !formData.content ||
-      !formData.password
-    ) {
-      alert("입력되지 않은 값이 있습니다");
+    if (!isValid()) {
       return;
     }
 
@@ -52,7 +53,7 @@ export const NewPostForm = () => {
   };
 
   const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+    e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
     const { name, value } = e.target;
 
@@ -62,64 +63,109 @@ export const NewPostForm = () => {
     }));
   };
 
+  const isValid = () => {
+    if (
+      !formData.name ||
+      !formData.title ||
+      !formData.content ||
+      !formData.password
+    ) {
+      alert("입력되지 않은 값이 있습니다");
+      return false;
+    }
+
+    if (!privacy) {
+      alert("선택하지 않은 값이 있습니다");
+      return false;
+    }
+  };
+
   return (
     <form className={s.NewPostForm} onSubmit={handleSubmit}>
       {/* 이름 */}
       <div className={`${s.Input} ${s.name}`}>
-        <label htmlFor="">이름</label>
+        <label htmlFor="name">이름</label>
         <input
           type="text"
+          id="name"
           name="name"
           value={formData.name}
           onChange={handleChange}
+          placeholder="홍길동"
+          maxLength={5}
         />
       </div>
 
       {/* 연락처 */}
       <div className={`${s.Input} ${s.phone}`}>
-        <label htmlFor="">휴대폰</label>
+        <label htmlFor="phone">휴대폰</label>
         <input
           type="text"
-          name="name"
-          value={formData.name}
+          id="phone"
+          name="phone"
+          value={formData.phone}
           onChange={handleChange}
+          placeholder="010-1234-5678"
+          maxLength={13}
         />
       </div>
 
       {/* 비밀번호 */}
       <div className={`${s.Input} ${s.password}`}>
-        <label htmlFor="">비밀번호</label>
+        <label htmlFor="password">비밀번호</label>
         <input
           type="password"
+          id="password"
           name="password"
           value={formData.password}
           onChange={handleChange}
+          maxLength={8}
+          placeholder="최대 8자리 숫자를 입력해주세요"
         />
       </div>
 
       {/* 제목 */}
       <div className={`${s.Input} ${s.title}`}>
-        <label htmlFor="">제목</label>
+        <label htmlFor="title">제목</label>
         <input
           type="text"
+          id="title"
           name="title"
           value={formData.title}
           onChange={handleChange}
+          placeholder="제목"
+          maxLength={20}
         />
       </div>
 
       {/* 내용 */}
       <div className={`${s.Textarea} ${s.content}`}>
-        <label htmlFor="">내용</label>
+        <label htmlFor="content">내용</label>
         <textarea
+          id="content"
           name="content"
           value={formData.content}
           onChange={handleChange}
+          placeholder="상담 내용을 작성해주세요."
         />
       </div>
 
+      <div className={`${s.Checkbox} ${s.privacy}`}>
+        <input
+          id="privacy"
+          name="privacy"
+          type="checkbox"
+          checked={privacy}
+          onChange={() => setPrivacy((prev) => !prev)}
+        />
+        <label htmlFor="privacy">
+          개인정보 취급 동의
+          <Link href=""> [전문]</Link>
+        </label>
+      </div>
+
       <div className={s.buttonContainer}>
-        <button className={s.button}>글쓰기</button>
+        <button className={s.button}>상담 신청</button>
       </div>
     </form>
   );

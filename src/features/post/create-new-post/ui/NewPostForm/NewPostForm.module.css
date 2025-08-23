@@ -1,6 +1,6 @@
 .NewPostForm {
-  width: 100%;
   display: flex;
+  width: 100%;
   flex-direction: column;
   gap: 24px;
 }
@@ -21,17 +21,32 @@
 
 .Input input,
 .Textarea textarea {
+  padding: 12px 16px;
+  border: 1px solid #a9a9a9;
   min-height: 40px;
   flex: 0.9;
-  padding: 12px 16px;
   border-radius: 4px;
-  border: 1px solid #a9a9a9;
   font-size: 16px;
 }
 
 .Textarea textarea {
-  min-height: 200px;
   padding: 24px 16px;
+  min-height: 300px;
+}
+
+.Checkbox {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.Checkbox input {
+  width: 18px;
+  height: 18px;
+}
+
+.Checkbox label {
+  font-weight: 500;
 }
 
 .buttonContainer {
@@ -40,7 +55,18 @@
 }
 
 .button {
-  padding: 8px 16px;
-  font-size: 18px;
-  border-radius: 8px;
+  padding: 12px 16px;
+  border: none;
+  color: #232323;
+  cursor: pointer;
+  background-color: #eeeeee;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 16px;
+  transition: background-color 0.2s ease;
+  margin-top: 16px;
+}
+
+.button:hover {
+  background-color: #cccccc;
 }

@@ -1,11 +1,15 @@
 import { useState } from "react";
-import type { ChangeEvent, FormData } from "react";
+import type { ChangeEvent, Dispatch, SetStateAction } from "react";
 
 import { useParams } from "next/navigation";
 import { useVerifyPasswordMutation } from "@/features/post/verify-password/hook";
 import s from "./VerifyPasswordForm.module.css";
 
-export const VerifyPasswordForm = ({ setIsVerified }) => {
+type TVerifyPasswordForm = {
+  setIsVerified: Dispatch<SetStateAction<boolean>>;
+};
+
+export const VerifyPasswordForm = ({ setIsVerified }: TVerifyPasswordForm) => {
   const [password, setPassword] = useState("");
 
   const { id } = useParams();
@@ -20,7 +24,7 @@ export const VerifyPasswordForm = ({ setIsVerified }) => {
     },
   });
 
-  const handleSubmit = (e: FormData<HTMLFormElement>) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
 
     if (!password) {
@@ -36,13 +40,18 @@ export const VerifyPasswordForm = ({ setIsVerified }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <div>
-        <label htmlFor=""></label>
-        <input type="password" value={password} onChange={handleInputChange} />
+    <form className={s.VerifyPasswordForm} onSubmit={handleSubmit}>
+      <div className={s.Input}>
+        <label className={s.label} htmlFor=""></label>
+        <input
+          className={s.input}
+          type="password"
+          value={password}
+          onChange={handleInputChange}
+        />
       </div>
 
-      <button>비밀번호 확인</button>
+      <button className={s.button}>비밀번호 확인</button>
     </form>
   );
 };

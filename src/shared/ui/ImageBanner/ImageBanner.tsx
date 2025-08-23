@@ -1,8 +1,12 @@
 import s from "./ImageBanner.module.css";
 
-export const ImageBanner = () => {
+type TImageBanner = {
+  className?: string;
+};
+
+export const ImageBanner = ({ className }: TImageBanner) => {
   return (
-    <section className={s.ImageBanner}>
+    <section className={`${s.ImageBanner} ${className}`}>
       <h1 className={s.h1}>온라인 상담</h1>
     </section>
   );

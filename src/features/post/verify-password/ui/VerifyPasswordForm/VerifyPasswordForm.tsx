@@ -42,10 +42,13 @@ export const VerifyPasswordForm = ({ setIsVerified }: TVerifyPasswordForm) => {
   return (
     <form className={s.VerifyPasswordForm} onSubmit={handleSubmit}>
       <div className={s.Input}>
-        <label className={s.label} htmlFor=""></label>
+        <label className={s.label} htmlFor="password"></label>
         <input
           className={s.input}
           type="password"
+          id="password"
+          name="password"
+          placeholder="8자리 비밀번호를 입력해주세요"
           value={password}
           onChange={handleInputChange}
         />

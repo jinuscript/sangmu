@@ -3,6 +3,7 @@ import s from "./Pagination.module.css";
 export const Pagination = ({ page, setPage, totalPages }) => {
   return (
     <nav className={s.Pagination}>
+      {/* 앞으로 이동 */}
       <ul className={s.ul}>
         <li
           className={s.li}
@@ -24,6 +25,7 @@ export const Pagination = ({ page, setPage, totalPages }) => {
             {index + 1}
           </li>
         ))}
+        {/* 뒤로 이동 */}
         <li
           className={s.li}
           onClick={() =>

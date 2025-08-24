@@ -38,6 +38,7 @@ export const NewPostForm = () => {
         title: "",
         content: "",
         password: "",
+        phone: "",
       });
     },
   });
@@ -46,6 +47,7 @@ export const NewPostForm = () => {
     e.preventDefault();
 
     if (!isValid()) {
+      alert("실패");
       return;
     }
 
@@ -78,6 +80,8 @@ export const NewPostForm = () => {
       alert("선택하지 않은 값이 있습니다");
       return false;
     }
+
+    return true;
   };
 
   return (

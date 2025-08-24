@@ -4,13 +4,9 @@ import { useRouter } from "next/navigation";
 
 import type { PostItem } from "@/entities/post/type";
 
-import s from "./BoardItem.module.css";
+import { formatDate } from "@/shared/utils";
 
-// 날짜 포맷팅 함수
-const formatDate = (dateString: string) => {
-  const date = new Date(dateString);
-  return date.toISOString().split("T")[0];
-};
+import s from "./BoardItem.module.css";
 
 // 이름 모자이크
 const maskName = (nameString: string) => {

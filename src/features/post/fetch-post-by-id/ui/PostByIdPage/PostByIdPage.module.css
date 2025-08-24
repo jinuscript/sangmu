@@ -31,11 +31,13 @@
 .content {
   background-color: #f9f9f9;
   padding: 24px 16px;
-  border-radius: 8px;
+  border-radius: 6px;
+  min-height: 500px;
+  white-space: pre-wrap;
 }
 
 .AdminReply {
   background-color: #eaeaea;
   padding: 24px 16px;
-  border-radius: 8px;
+  border-radius: 6px;
 }

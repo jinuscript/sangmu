@@ -1,29 +1,17 @@
-import { createSupabaseClient } from "@/shared/lib/supabase/client";
-
 type FetchPostsParams = {
   page: number;
 };
 
-const PAGE_SIZE = 10;
+export const fetchPosts = async ({ page }: FetchPostsParams) => {
+  const result = await fetch("/api/posts", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ page }),
+  });
 
-export async function fetchPosts({ page }: FetchPostsParams) {
-  const supabase = createSupabaseClient();
+  if (!result.ok) {
+    throw new Error("게시글을 불러오지 못했습니다");
+  }
 
-  const from = (page - 1) * PAGE_SIZE;
-  const to = from + PAGE_SIZE - 1;
-
-  const { data, error, count } = await supabase
-    .from("posts")
-    .select("*", { count: "exact" })
-    .order("created_at", { ascending: false })
-    .range(from, to);
-
-  if (error) throw error;
-
-  return {
-    items: data,
-    total: count,
-    page,
-    totalPages: Math.ceil(count / PAGE_SIZE),
-  };
-}
+  return await result.json();
+};

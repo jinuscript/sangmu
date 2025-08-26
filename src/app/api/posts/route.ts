@@ -3,6 +3,21 @@ import { createClient } from "@supabase/supabase-js";
 
 const PAGE_SIZE = 10;
 
+const maskName = (name: string) => {
+  if (!name) return "";
+
+  if (name.length === 1) {
+    return name; // 한 글자면 그대로
+  }
+
+  if (name.length === 2) {
+    return name[0] + "*"; // 두 글자면 앞글자만 남기고 뒤는 *
+  }
+
+  // 세 글자 이상이면 첫 글자 + 가운데 *들 + 마지막 글자
+  return name[0] + "*".repeat(name.length - 2) + name[name.length - 1];
+};
+
 export async function POST(req: Request) {
   const { page } = await req.json();
 
@@ -29,7 +44,7 @@ export async function POST(req: Request) {
   // name을 김**으로 내보내기 위해 마스킹
   const masked = data.map((post) => ({
     ...post,
-    name: post.name ? post.name[0] + "*".repeat(post.name.length - 1) : "",
+    name: maskName(post.name),
   }));
 
   return Response.json(

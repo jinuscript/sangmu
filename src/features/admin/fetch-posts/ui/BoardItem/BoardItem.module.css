@@ -1,0 +1,41 @@
+.BoardItem {
+  display: flex;
+  cursor: pointer;
+}
+
+.td {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px 0;
+  border-bottom: 1px solid #eaeaea;
+}
+
+.number,
+.title,
+.status,
+.name,
+.date {
+  flex: 1;
+}
+
+.title {
+  flex: 3;
+}
+
+.badge {
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.active {
+  background-color: #e6f4ff;
+  color: #1d4ed8;
+}
+
+.inactive {
+  background-color: #fee2e2;
+  color: #b91c1c;
+}

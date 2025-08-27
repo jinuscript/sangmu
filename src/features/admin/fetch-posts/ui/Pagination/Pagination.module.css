@@ -1,0 +1,20 @@
+.ul {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+
+.li {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.active {
+  border-color: #282828;
+}

@@ -18,7 +18,7 @@ export const BoardItem = ({
 }: PostItem) => {
   const { push } = useRouter();
   return (
-    <tr className={s.BoardItem} onClick={() => push(`/counsel/${id}`)}>
+    <tr className={s.BoardItem} onClick={() => push(`/admin/${id}`)}>
       {/* 번호 */}
       <td className={`${s.td} ${s.number}`}>{post_number}</td>
 

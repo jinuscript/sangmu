@@ -1,6 +1,8 @@
+"use server";
+
 import { createSupabaseServerClient } from "@/shared/lib/supabase/server";
 
-export const fetchPosts = async () => {
+export const fetchPostsAction = async () => {
   const supabase = await createSupabaseServerClient();
 
   return supabase

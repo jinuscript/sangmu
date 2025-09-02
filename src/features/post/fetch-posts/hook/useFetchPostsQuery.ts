@@ -1,13 +1,9 @@
 import { useQuery } from "@tanstack/react-query";
-import { fetchPosts } from "@/features/post/fetch-posts/api";
+import { fetchPostsAction } from "../action";
 
-type TUseFetchPostsQuery = {
-  page: number;
-};
-
-export const useFetchPostsQuery = ({ page }: TUseFetchPostsQuery) => {
+export const useFetchPostsQuery = () => {
   return useQuery({
-    queryKey: ["posts", page],
-    queryFn: () => fetchPosts({ page }),
+    queryKey: ["adminPosts"],
+    queryFn: fetchPostsAction,
   });
 };

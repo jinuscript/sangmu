@@ -1,91 +1,52 @@
 "use client";
 
 import { useState } from "react";
+
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 
-import type { ChangeEvent } from "react";
-
-import { useCreateNewPostMutation } from "@/features/post/create-new-post/hook";
+import { createNewPostAction } from "../../action";
 
 import s from "./NewPostForm.module.css";
 
 export const NewPostForm = () => {
-  const [formData, setFormData] = useState({
-    name: "",
-    title: "",
-    content: "",
-    phone: "",
-    password: "",
-  });
-
   const [privacy, setPrivacy] = useState(false);
 
   const { push } = useRouter();
 
-  const { mutate: createNewPost } = useCreateNewPostMutation({
-    onSuccess: () => {
-      alert("글이 작성되었습니다!");
-      push(`/counsel`);
-    },
-    onError: (error) => {
-      console.error(error);
-      alert("글 작성에 실패했습니다. 다시 시도해주세요.");
-    },
-    onSettled: () => {
-      setFormData({
-        name: "",
-        title: "",
-        content: "",
-        password: "",
-        phone: "",
-      });
-    },
-  });
+  const handleSubmit = async (formData: FormData) => {
+    const name = formData.get("name");
+    const phone = formData.get("phone");
+    const title = formData.get("title");
+    const content = formData.get("content");
+    const password = formData.get("password");
 
-  const handleSubmit = (e: ChangeEvent<HTMLFormElement>) => {
-    e.preventDefault();
-
-    if (!isValid()) {
-      alert("실패");
+    if (!name || !phone || !title || !content || !password) {
+      alert("빈 값이 있습니다!");
       return;
     }
 
-    createNewPost(formData);
-  };
-
-  const handleChange = (
-    e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
-    const { name, value } = e.target;
-
-    setFormData((prevData) => ({
-      ...prevData,
-      [name]: value,
-    }));
-  };
-
-  const isValid = () => {
-    if (
-      !formData.name ||
-      !formData.title ||
-      !formData.content ||
-      !formData.password
-    ) {
-      alert("입력되지 않은 값이 있습니다");
-      return false;
-    }
-
     if (!privacy) {
-      alert("선택하지 않은 값이 있습니다");
-      return false;
+      alert("필요 약관에 체크해주세요!");
+      return;
     }
 
-    return true;
+    const { data } = await createNewPostAction({
+      name,
+      password,
+      title,
+      content,
+      phone,
+    });
+
+    if (data) {
+      alert("게시글 성공!");
+      push("/posts");
+    }
   };
 
   return (
-    <form className={s.NewPostForm} onSubmit={handleSubmit}>
+    <form className={s.NewPostForm} action={handleSubmit}>
       {/* 이름 */}
       <div className={`${s.Input} ${s.name}`}>
         <label htmlFor="name">이름</label>
@@ -93,8 +54,6 @@ export const NewPostForm = () => {
           type="text"
           id="name"
           name="name"
-          value={formData.name}
-          onChange={handleChange}
           placeholder="홍길동"
           maxLength={5}
         />
@@ -107,8 +66,6 @@ export const NewPostForm = () => {
           type="text"
           id="phone"
           name="phone"
-          value={formData.phone}
-          onChange={handleChange}
           placeholder="010-1234-5678"
           maxLength={13}
         />
@@ -121,8 +78,6 @@ export const NewPostForm = () => {
           type="password"
           id="password"
           name="password"
-          value={formData.password}
-          onChange={handleChange}
           maxLength={8}
           placeholder="최대 8자리 숫자를 입력해주세요"
         />
@@ -135,8 +90,6 @@ export const NewPostForm = () => {
           type="text"
           id="title"
           name="title"
-          value={formData.title}
-          onChange={handleChange}
           placeholder="제목"
           maxLength={20}
         />
@@ -148,8 +101,6 @@ export const NewPostForm = () => {
         <textarea
           id="content"
           name="content"
-          value={formData.content}
-          onChange={handleChange}
           placeholder="상담 내용을 작성해주세요."
         />
       </div>

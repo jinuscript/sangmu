@@ -1,19 +1,24 @@
-import { fetchPostById } from "@/features/post/fetch-post-by-id/api";
+"use client";
 
-const PostPageById = async ({
-  params,
-}: {
-  params: Promise<{ id: string }>;
-}) => {
-  const { id } = await params;
+import { useState } from "react";
 
-  const { data: postById } = await fetchPostById(id);
+import { useParams } from "next/navigation";
 
-  if (!postById) {
-    return null;
+import { PostPasswordForm } from "@/features/post/check-post-password/ui/PostPasswordForm/PostPasswordForm";
+import { PostByIdPage } from "@/features/post/fetch-post-by-id/ui";
+
+const PostPage = () => {
+  const [isVerified, setIsVerified] = useState(false);
+
+  const { id } = useParams<{ id: string }>();
+
+  if (!isVerified) {
+    // 비밀번호 입력 폼
+    return <PostPasswordForm id={id} setIsVerified={setIsVerified} />;
   }
 
-  return <div>PostPageByIdQuery</div>;
+  // 문의 페이지
+  return <PostByIdPage id={id} />;
 };
 
-export default PostPageById;
+export default PostPage;

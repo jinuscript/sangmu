@@ -1,32 +1,25 @@
 "use client";
 
-import { useParams } from "next/navigation";
-import { useFetchPostByIdQuery } from "@/features/post/fetch-post-by-id/hook";
 import { formatDate } from "@/shared/utils";
+
+import { useFetchPostByIdQuery } from "../../hook";
 
 import s from "./PostByIdPage.module.css";
 
-export const PostByIdPage = () => {
-  const { id } = useParams();
-
-  const { data: post, isLoading, error } = useFetchPostByIdQuery(id);
-
-  if (isLoading) return <main>Loading...</main>;
-
-  if (error) return <main>Error: {error.message}</main>;
-  console.log(post);
+export const PostByIdPage = ({ id }: { id: string }) => {
+  const { data: queryData } = useFetchPostByIdQuery(id);
 
   return (
     <main className={s.PostByIdPage}>
-      <p className={s.title}>{post?.data.title}</p>
+      <p className={s.title}>{queryData?.data?.title}</p>
       <div className={s.container}>
-        <p className={s.name}>{post?.data.name}</p>
+        <p className={s.name}>{queryData?.data?.name}</p>
         <div className={s.column} />
-        <p className={s.date}>{formatDate(post?.data.created_at)}</p>
+        {/* <p className={s.date}>{formatDate(queryData?.data?.created_at)}</p> */}
       </div>
-      <p className={s.content}>{post?.data.content}</p>
-      {post?.data.admin_reply && (
-        <p className={s.AdminReply}>{post?.data.admin_reply}</p>
+      <p className={s.content}>{queryData?.data?.content}</p>
+      {queryData?.data?.admin_reply && (
+        <p className={s.AdminReply}>{queryData?.data?.admin_reply}</p>
       )}
     </main>
   );

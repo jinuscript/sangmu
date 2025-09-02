@@ -5,5 +5,5 @@ export const fetchPosts = async () => {
 
   return supabase
     .from("posts")
-    .select("id, created_at, name, title, is_answered, post_number");
+    .select("id, created_at, name, title, post_number, admin_reply");
 };

@@ -2,10 +2,8 @@
 
 import { createSupabaseServerClient } from "@/shared/lib/supabase/server";
 
-export const adminLoginAction = async (formData: FormData) => {
+export const adminLoginAction = async (password: string) => {
   const supabase = await createSupabaseServerClient();
-
-  const password = formData.get("password");
 
   const { error } = await supabase.auth.signInWithPassword({
     email: process.env.NEXT_PUBLIC_SUPABASE_ADMIN_ID!,
@@ -13,8 +11,9 @@ export const adminLoginAction = async (formData: FormData) => {
   });
 
   if (error) {
-    return false;
+    console.error("로그인 실패:", error);
+    return { success: false, error: error.message };
   }
 
-  return true;
+  return { success: true };
 };

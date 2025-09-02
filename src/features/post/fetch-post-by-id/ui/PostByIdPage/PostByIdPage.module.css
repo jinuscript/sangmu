@@ -5,13 +5,19 @@
 }
 
 .title {
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 500;
 }
 
 .container {
   display: flex;
   gap: 8px;
+}
+
+.border {
+  height: 1px;
+  width: 100%;
+  background-color: #232323;
 }
 
 .name {
@@ -21,7 +27,7 @@
 .column {
   width: 1px;
   max-height: 100%;
-  background-color: #282828;
+  background-color: #232323;
 }
 
 .date {
@@ -29,15 +35,13 @@
 }
 
 .content {
-  background-color: #f9f9f9;
-  padding: 24px 16px;
-  border-radius: 6px;
   min-height: 500px;
   white-space: pre-wrap;
 }
 
 .AdminReply {
-  background-color: #eaeaea;
+  min-height: 200px;
+  background-color: #f0f0f0;
   padding: 24px 16px;
   border-radius: 6px;
 }

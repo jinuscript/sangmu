@@ -1,17 +1,9 @@
-type FetchPostsParams = {
-  page: number;
-};
+import { createSupabaseServerClient } from "@/shared/lib/supabase/server";
 
-export const fetchPosts = async ({ page }: FetchPostsParams) => {
-  const result = await fetch("/api/posts", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ page }),
-  });
+export const fetchPosts = async () => {
+  const supabase = await createSupabaseServerClient();
 
-  if (!result.ok) {
-    throw new Error("게시글을 불러오지 못했습니다");
-  }
-
-  return await result.json();
+  return supabase
+    .from("posts")
+    .select("id, created_at, name, title, is_answered, post_number");
 };

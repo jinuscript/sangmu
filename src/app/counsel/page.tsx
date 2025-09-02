@@ -14,7 +14,7 @@ export default function CounselPage() {
         </Link>
       </div>
       {/* 게시판 */}
-      <Board />
+      {/* <Board /> */}
     </section>
   );
 }

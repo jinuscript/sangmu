@@ -1,1 +1,1 @@
-export { fetchPostByIdQuery } from "./fetchPostByIdQuery";
+export { fetchPostById } from "./fetchPostById";

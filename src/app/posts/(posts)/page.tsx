@@ -9,7 +9,7 @@ const PostsPage = async () => {
   const { data: posts } = await fetchPosts();
 
   return (
-    <>
+    <section>
       <div className={s.buttonContainer}>
         <Link className={s.CreateNewPostButton} href={`/posts/create`}>
           상담 신청
@@ -46,7 +46,7 @@ const PostsPage = async () => {
           );
         })}
       </div>
-    </>
+    </section>
   );
 };
 

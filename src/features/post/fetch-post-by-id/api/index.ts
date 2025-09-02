@@ -1,0 +1,1 @@
+export { fetchPostById } from "./fetchPostById";

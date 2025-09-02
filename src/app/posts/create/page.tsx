@@ -1,5 +1,11 @@
+import { NewPostForm } from "@/features/post/create-new-post/ui";
+
 const CreateNewPostPage = () => {
-  return <div>CreateNewPostPage</div>;
+  return (
+    <section>
+      <NewPostForm />
+    </section>
+  );
 };
 
 export default CreateNewPostPage;

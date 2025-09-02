@@ -1,1 +1,0 @@
-export { checkPostPassword } from "./checkPostPassword";

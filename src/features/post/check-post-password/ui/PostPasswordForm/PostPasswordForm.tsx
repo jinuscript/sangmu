@@ -1,7 +1,7 @@
 "use client";
 
 import type { Dispatch, SetStateAction } from "react";
-import { checkPasswordFormAction } from "../../action/checkPasswordFormAction";
+import { checkPostPasswordAction } from "../../action";
 
 type TPostPasswordForm = {
   id: string;
@@ -17,7 +17,7 @@ export const PostPasswordForm = ({ id, setIsVerified }: TPostPasswordForm) => {
       return;
     }
 
-    const isValid = await checkPasswordFormAction(id, password);
+    const isValid = await checkPostPasswordAction(id, password);
 
     if (!isValid) {
       alert("비밀번호 틀렸습니다!");

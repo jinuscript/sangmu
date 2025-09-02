@@ -2,7 +2,7 @@
 
 import { createSupabaseServerClient } from "@/shared/lib/supabase/server";
 
-export const checkPasswordFormAction = async (id: string, password: string) => {
+export const checkPostPasswordAction = async (id: string, password: string) => {
   const supabase = await createSupabaseServerClient();
 
   const { data } = await supabase

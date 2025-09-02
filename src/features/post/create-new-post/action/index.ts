@@ -1,0 +1,1 @@
+export { createNewPostAction } from "./createNewPostAction";

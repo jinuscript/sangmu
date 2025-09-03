@@ -7,7 +7,6 @@ export async function middleware(request: NextRequest) {
 
 export const config = {
   matcher: [
-    "/admin",
     "/admin/:path*", // /admin 및 하위 경로 모두
   ],
 };

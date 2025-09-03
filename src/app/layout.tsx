@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Provider as JotaiProvider } from "jotai";
+import { TQProvider } from "@/shared/provider";
 import { Footer, Navigation, SideMenu } from "@/components";
 import "@/styles/globals.css";
 
@@ -41,12 +42,14 @@ export default function RootLayout({
         />
       </head>
       <body>
-        <JotaiProvider>
-          <Navigation />
-          {children}
-          <Footer />
-          <SideMenu />
-        </JotaiProvider>
+        <TQProvider>
+          <JotaiProvider>
+            <Navigation />
+            {children}
+            <Footer />
+            <SideMenu />
+          </JotaiProvider>
+        </TQProvider>
       </body>
     </html>
   );

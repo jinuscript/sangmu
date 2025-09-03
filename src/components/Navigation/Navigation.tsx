@@ -7,6 +7,12 @@ export default function Navigation() {
   const pathname = usePathname();
 
   const isPracticePage = pathname.startsWith("/practice-areas");
+  const isPosts = pathname.startsWith("/posts");
+  const isAdmin = pathname.startsWith("/admin");
+
+  if (isPosts || isAdmin) {
+    return null;
+  }
 
   if (isPracticePage) {
     return (
@@ -54,14 +60,19 @@ export default function Navigation() {
               주요 업무
             </Link>
           </li>
-          <li className={s.li}>
+          {/* <li className={s.li}>
             <Link className={s.link} href="#3">
               상담 신청
             </Link>
-          </li>
+          </li> */}
           <li className={s.li}>
             <Link className={s.link} href="#4">
               오시는 길
+            </Link>
+          </li>
+          <li className={s.li}>
+            <Link className={s.link} href="/posts">
+              온라인 상담
             </Link>
           </li>
         </ul>

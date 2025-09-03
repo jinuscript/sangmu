@@ -1,0 +1,16 @@
+.DeletePostButton {
+  padding: 8px 10px;
+  border: none;
+  font-size: 16px;
+  font-weight: 500;
+  border-radius: 6px;
+
+  color: rgb(78, 89, 104);
+  background-color: rgb(242, 244, 246);
+  cursor: pointer;
+  transition: all 200ms ease-in-out;
+}
+
+.DeletePostButton:hover {
+  background-color: rgba(78, 89, 104, 0.26);
+}

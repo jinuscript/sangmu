@@ -1,0 +1,1 @@
+export { fetchPostsAction } from "./fetchPostsAction";

@@ -1,0 +1,1 @@
+export { adminLogoutAction } from "./adminLogoutAction";

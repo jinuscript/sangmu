@@ -1,0 +1,47 @@
+.PostByIdPage {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.title {
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.container {
+  display: flex;
+  gap: 8px;
+}
+
+.border {
+  height: 1px;
+  width: 100%;
+  background-color: #232323;
+}
+
+.name {
+  font-size: 16px;
+}
+
+.column {
+  width: 1px;
+  max-height: 100%;
+  background-color: #232323;
+}
+
+.date {
+  font-size: 16px;
+}
+
+.content {
+  min-height: 500px;
+  white-space: pre-wrap;
+}
+
+.AdminReply {
+  min-height: 200px;
+  background-color: #f0f0f0;
+  padding: 24px 16px;
+  border-radius: 6px;
+}

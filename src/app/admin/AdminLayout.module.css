@@ -1,0 +1,58 @@
+/* 네비게이션 */
+.nav {
+  display: flex;
+
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 16px;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1440px;
+
+  min-height: 60px;
+}
+
+.Logo {
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 20px;
+}
+
+.ul {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.link {
+  display: inline-block;
+  padding: 12px 16px;
+
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 500;
+  transition: all 200ms ease-in-out;
+}
+
+.link:hover {
+  background-color: #eeeeee;
+}
+
+/* 배너 */
+.Banner {
+  display: flex;
+  color: #333d4b;
+  font-size: 40px;
+  font-weight: 700;
+  align-items: center;
+  justify-content: center;
+  min-height: 200px;
+}
+
+/* 페이지 */
+.layoutContainer {
+  width: 100%;
+  margin: 0 auto;
+  padding: 40px 16px;
+  max-width: 1440px;
+}

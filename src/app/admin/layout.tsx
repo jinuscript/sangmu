@@ -2,6 +2,8 @@ import type { ReactNode } from "react";
 
 import Link from "next/link";
 
+import { LogoutButton } from "@/features/admin/admin-logout/ui";
+
 import s from "./AdminLayout.module.css";
 
 const AdminLayout = ({ children }: { children: ReactNode }) => {
@@ -15,7 +17,7 @@ const AdminLayout = ({ children }: { children: ReactNode }) => {
           </h1>
           <ul>
             <li>
-              <button>로그아웃</button>
+              <LogoutButton />
             </li>
           </ul>
         </nav>

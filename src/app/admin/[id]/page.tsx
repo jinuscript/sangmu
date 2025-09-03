@@ -1,6 +1,7 @@
 import { formatDate } from "@/shared/utils";
 import { fetchPostById } from "@/features/post/fetch-post-by-id/api";
 import { DeletePostButton } from "@/features/admin/delete-post/ui";
+import { AdminReplyForm } from "@/features/admin/update-reply/ui";
 
 import s from "./AdminPageById.module.css";
 
@@ -32,19 +33,7 @@ const AdminPageById = async ({ params }) => {
       <p className={s.content}>{post?.content}</p>
 
       {/* 답변 */}
-      <div className={s.reply}>
-        <textarea
-          defaultValue={post?.admin_reply ?? ""}
-          className={s.textarea}
-          name="reply"
-          placeholder="답변을 등록해주세요."
-        />
-        <div className={s.buttonContainer}>
-          <button className={s.button}>
-            {post?.admin_reply ? "답변 수정" : "답변 등록"}
-          </button>
-        </div>
-      </div>
+      <AdminReplyForm admin_reply={post?.admin_reply} />
     </section>
   );
 };

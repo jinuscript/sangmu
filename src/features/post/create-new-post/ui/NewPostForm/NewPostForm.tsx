@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 
-import Link from "next/link";
 import { useRouter } from "next/navigation";
 
 import { createNewPostAction } from "../../action";
@@ -15,11 +14,11 @@ export const NewPostForm = () => {
   const { push } = useRouter();
 
   const handleSubmit = async (formData: FormData) => {
-    const name = formData.get("name");
-    const phone = formData.get("phone");
-    const title = formData.get("title");
-    const content = formData.get("content");
-    const password = formData.get("password");
+    const name = formData.get("name") as string;
+    const phone = formData.get("phone") as string;
+    const title = formData.get("title") as string;
+    const content = formData.get("content") as string;
+    const password = formData.get("password") as string;
 
     if (!name || !phone || !title || !content || !password) {
       alert("빈 값이 있습니다!");

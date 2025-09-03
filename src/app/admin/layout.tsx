@@ -2,7 +2,7 @@ import type { ReactNode } from "react";
 
 import Link from "next/link";
 
-import { LogoutButton } from "@/features/admin/admin-logout/ui";
+// import { LogoutButton } from "@/features/admin/admin-logout/ui";
 
 import s from "./AdminLayout.module.css";
 

@@ -1,5 +1,5 @@
 import {
-  ContactSection,
+  // ContactSection,
   HeroSection,
   IntroSection,
   ServiceSection,

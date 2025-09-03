@@ -5,7 +5,11 @@ import { AdminReplyForm } from "@/features/admin/update-reply/ui";
 
 import s from "./AdminPageById.module.css";
 
-const AdminPageById = async ({ params }) => {
+const AdminPageById = async ({
+  params,
+}: {
+  params: Promise<{ id: string }>;
+}) => {
   const { id } = await params;
   const { data: post } = await fetchPostById(id);
 

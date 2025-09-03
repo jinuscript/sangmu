@@ -11,7 +11,7 @@ export const AdminReplyForm = ({ admin_reply }: { admin_reply: string }) => {
   const { refresh } = useRouter();
 
   const handleClick = async (formData: FormData) => {
-    const reply = formData.get("reply");
+    const reply = formData.get("reply") as string;
 
     if (!reply) {
       alert("답변이 비어있습니다");

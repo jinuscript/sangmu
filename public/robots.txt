@@ -2,6 +2,8 @@
 User-agent: *
 Allow: /
 
-# Sitemaps
-Sitemap: https://www.xn--6l3bu5e7uav1vu2p7ia.kr/sitemap.xml
+# Host
+Host: https://www.송지현변호사.kr
 
+# Sitemaps
+Sitemap: https://www.송지현변호사.kr/sitemap.xml

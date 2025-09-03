@@ -15,7 +15,7 @@ export const updateAdminReplyAction = async (id: string, reply: string) => {
     .select();
 
   if (error) {
-    console.error("추가 실패:", error);
+    console.error("답변 저장 실패:", error);
     return { success: false, error: error.message };
   }
 

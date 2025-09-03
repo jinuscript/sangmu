@@ -33,9 +33,17 @@ export async function updateSession(request: NextRequest) {
     data: { user },
   } = await supabase.auth.getUser();
 
+  // 로그인 X -> 로그인 페이지 O
   if (!user && !request.nextUrl.pathname.startsWith("/admin/login")) {
     const url = request.nextUrl.clone();
     url.pathname = "/admin/login";
+    return NextResponse.redirect(url);
+  }
+
+  // 로그인 O -> 로그인 페이지 X
+  if (user && request.nextUrl.pathname.startsWith("/admin/login")) {
+    const url = request.nextUrl.clone();
+    url.pathname = "/admin";
     return NextResponse.redirect(url);
   }
 

@@ -1,5 +1,5 @@
-import Image from 'next/image';
-import s from './SideMenu.module.css';
+import Image from "next/image";
+import s from "./SideMenu.module.css";
 
 export default function SideMenu() {
   return (
@@ -22,14 +22,14 @@ export default function SideMenu() {
           </a>
         </li>
         <li className={s.li}>
-          <a className={s.link} href="tel:062-263-8825">
+          <a className={s.link} href="tel:062-222-8825">
             <Image
               src="/home/telephone.png"
               alt="네이버 로고"
               width={32}
               height={32}
             />
-            <span>062-263-8825</span>
+            <span>062-222-8825</span>
           </a>
         </li>
       </ul>

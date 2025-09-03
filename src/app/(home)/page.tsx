@@ -24,7 +24,7 @@ export default function HomePage() {
       <ServiceSection />
 
       {/* 5. 상담신청 섹션 */}
-      <ContactSection />
+      {/* <ContactSection /> */}
 
       {/* 6. 위치 섹션 */}
       <LocationSection />

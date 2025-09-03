@@ -1,6 +1,6 @@
 "use client";
 
-import Image from "next/image";
+import { useRouter } from "next/navigation";
 import { useParams } from "next/navigation";
 import { deletePostAction } from "../../action";
 
@@ -8,14 +8,29 @@ import s from "./DeletePostButton.module.css";
 
 export const DeletePostButton = () => {
   const { id } = useParams<{ id: string }>();
+  const { push } = useRouter();
 
   const handleClick = async () => {
-    await deletePostAction(id);
+    const ok = confirm("게시글을 삭제하시겠습니까?");
+
+    if (!ok) {
+      return;
+    }
+
+    const { success } = await deletePostAction(id);
+
+    if (!success) {
+      alert("게시글 삭제 실패");
+      return;
+    }
+
+    alert("게시글 삭제 성공");
+
+    push("/admin");
   };
 
   return (
     <button className={s.DeletePostButton} onClick={handleClick}>
-      {/* <Image src="/svg/trash.svg" alt="삭제 버튼" width={24} height={24} /> */}
       게시글 삭제
     </button>
   );

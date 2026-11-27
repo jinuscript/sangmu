@@ -1,1 +1,0 @@
-export { TQProvider } from "./TQProvider";

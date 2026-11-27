@@ -5,7 +5,7 @@
   right: 40px;
   border-radius: 20px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  border-radius: 20px;
+  z-index: 900;
 }
 
 .ul {
@@ -38,8 +38,28 @@
   font-weight: 500;
 }
 
+.icon {
+  width: 32px;
+  height: 32px;
+  color: #384dd6;
+}
+
+/* 모바일: 상단 메뉴가 숨겨지므로 사이드 메뉴를 작게 표시 */
 @media screen and (max-width: 480px) {
   .SideMenu {
-    display: none;
+    bottom: 16px;
+    right: 16px;
+    border-radius: 14px;
+  }
+
+  .link {
+    padding: 10px 8px;
+    gap: 6px;
+    font-size: 11px;
+  }
+
+  .icon {
+    width: 24px;
+    height: 24px;
   }
 }

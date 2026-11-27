@@ -45,23 +45,23 @@ export default function Navigation() {
         </h1>
         <ul className={s.ul}>
           <li className={s.li}>
-            <Link className={s.link} href="#1">
+            <Link className={s.link} href="/#1">
               대표 변호사 소개
             </Link>
           </li>
           <li className={s.li}>
-            <Link className={s.link} href="#2">
+            <Link className={s.link} href="/#2">
               주요 업무
             </Link>
           </li>
           <li className={s.li}>
-            <Link className={s.link} href="#3">
-              상담 신청
+            <Link className={s.link} href="/#4">
+              오시는 길
             </Link>
           </li>
           <li className={s.li}>
-            <Link className={s.link} href="#4">
-              오시는 길
+            <Link className={s.link} href="/consultation">
+              온라인 상담
             </Link>
           </li>
         </ul>

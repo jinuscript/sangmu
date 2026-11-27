@@ -1,0 +1,47 @@
+.banner {
+  background-image: url("/practice-areas/practice-areas.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 400px;
+}
+
+.overlay {
+  background-color: hsl(0, 0%, 0%, 70%);
+  height: 100%;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.title {
+  font-size: 40px;
+  font-weight: 700;
+}
+
+.container {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 80px 16px 120px;
+}
+
+.desc {
+  font-size: 18px;
+  line-height: 1.7;
+  color: #404040;
+}
+
+@media screen and (max-width: 480px) {
+  .banner {
+    height: 280px;
+  }
+
+  .title {
+    font-size: 32px;
+  }
+
+  .container {
+    padding: 48px 16px 80px;
+  }
+}

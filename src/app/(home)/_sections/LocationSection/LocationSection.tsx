@@ -32,7 +32,7 @@ export default function LocationSection() {
             광주광역시 동구 지산동 714-20 광주지방변호사회관 302호
           </p>
           <p className={s.p}>지산동 714-20</p>
-          <p className={s.p}>062-263-8825</p>
+          <p className={s.p}>062-222-8825</p>
         </div>
       </div>
     </section>

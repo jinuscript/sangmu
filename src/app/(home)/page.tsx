@@ -1,5 +1,4 @@
 import {
-  ContactSection,
   HeroSection,
   IntroSection,
   ServiceSection,
@@ -23,10 +22,7 @@ export default function HomePage() {
       {/* 4. 서비스 섹션 */}
       <ServiceSection />
 
-      {/* 5. 상담신청 섹션 */}
-      <ContactSection />
-
-      {/* 6. 위치 섹션 */}
+      {/* 5. 위치 섹션 */}
       <LocationSection />
     </main>
   );

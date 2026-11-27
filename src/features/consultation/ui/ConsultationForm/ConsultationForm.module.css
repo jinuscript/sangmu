@@ -1,0 +1,180 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  margin-top: 48px;
+  position: relative;
+}
+
+.honeypot {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+}
+
+.label {
+  font-weight: 700;
+  font-size: 17px;
+  margin-bottom: 10px;
+}
+
+.required {
+  margin-left: 2px;
+  color: #dc2626;
+}
+
+.input {
+  width: 100%;
+  min-height: 50px;
+  border-radius: 10px;
+  padding: 10px 16px;
+  font-size: 17px;
+  background-color: #fff;
+  border: 1px solid #dddddd;
+  outline: none;
+  transition: border-color 200ms ease-in-out, box-shadow 200ms ease-in-out;
+}
+
+.input:focus {
+  border-color: #384dd6;
+  box-shadow: 0 0 0 3px rgb(56 77 214 / 15%);
+}
+
+.input[aria-invalid="true"] {
+  border-color: #dc2626;
+}
+
+.textarea {
+  resize: vertical;
+  line-height: 1.6;
+  padding: 14px 16px;
+}
+
+.hint,
+.error {
+  margin-top: 8px;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.hint {
+  color: #737373;
+}
+
+.error {
+  color: #dc2626;
+}
+
+.consent {
+  border: 1px solid #e5e5e5;
+  border-radius: 10px;
+  padding: 16px 20px 20px;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.legend {
+  padding: 0 6px;
+  font-weight: 700;
+}
+
+.dl {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  column-gap: 16px;
+  row-gap: 4px;
+  color: #525252;
+}
+
+.dl dt {
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.consentNote {
+  margin-top: 8px;
+  color: #525252;
+}
+
+.checkboxLabel {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 14px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.checkbox {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  cursor: pointer;
+}
+
+.alert {
+  padding: 14px 16px;
+  border-radius: 10px;
+  background-color: #fef2f2;
+  color: #b91c1c;
+  font-size: 15px;
+}
+
+.button {
+  width: 100%;
+  padding: 16px 24px;
+  font-size: 18px;
+  font-weight: 700;
+  color: #fff;
+  background-color: #384dd6;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 200ms ease-in-out;
+}
+
+.button:hover {
+  background-color: #2a3bb0;
+}
+
+.button:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+.success {
+  margin-top: 48px;
+  padding: 40px 24px;
+  border: 1px solid #e5e5e5;
+  border-radius: 12px;
+  text-align: center;
+}
+
+.successTitle {
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.successDesc {
+  margin-top: 8px;
+  color: #525252;
+}
+
+@media screen and (max-width: 480px) {
+  .row {
+    grid-template-columns: 1fr;
+  }
+}
